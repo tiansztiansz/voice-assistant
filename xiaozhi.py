@@ -8,6 +8,7 @@ from espnet2.bin.asr_inference import Speech2Text
 import soundfile
 import time
 
+
 model = Speech2Text.from_pretrained(
     "espnet/pengcheng_guo_wenetspeech_asr_train_asr_raw_zh_char"
 )
@@ -121,6 +122,29 @@ def speech2text():
     return text
 
 
+def music(text):
+    if text == "播放音乐":
+        from pydub import AudioSegment
+        from pydub.playback import play
+        import urllib.request
+        import pandas as pd
+        from random import choice
+
+        music_list = pd.read_csv("./resources/music_list.csv", usecols=["URL"])
+        LIST = [i for i in music_list.URL]
+        url = choice(LIST)
+        filename = "./resources/music.mp3"
+        print("正在下载音乐....")
+        urllib.request.urlretrieve(url, filename)
+        birdsound = AudioSegment.from_mp3(filename)
+        print("正在播放音乐...")
+        play(birdsound)
+        print("音乐播放完毕")
+    else:
+        result_text = "不好意思，你能再说一遍吗"
+        print(result_text)
+
+
 if __name__ == "__main__":
     while endSnow == False:
         interrupted = False
@@ -138,3 +162,4 @@ if __name__ == "__main__":
         my_record()  # 唤醒成功开始录音
         text = speech2text()
         print("#### {} #####\n".format(text))
+        music(text)
