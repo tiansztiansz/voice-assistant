@@ -4,8 +4,6 @@
 
 (已完成)语音识别：espnet
 
-问答系统：chatgpt
-
 语音合成：espnet
 
 <br>
@@ -21,4 +19,9 @@ source ./venv/bin/activate
 
 ```bash
 python xiaozhi.py
+```
+
+## 生成依赖文件
+```bash
+pip freeze > requirements.txt
 ```
