@@ -18,7 +18,7 @@ source ./venv/bin/activate
 运行主程序
 
 ```bash
-python xiaozhi.py
+python app.py
 ```
 
 ## 生成依赖文件

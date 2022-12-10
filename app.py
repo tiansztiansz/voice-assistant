@@ -5,12 +5,22 @@ import time
 import os
 from pyaudio import PyAudio, paInt16
 from espnet2.bin.asr_inference import Speech2Text
+from espnet2.bin.tts_inference import Text2Speech
 import soundfile
 import time
+from pydub import AudioSegment
+from pydub.playback import play as play_music
+import urllib.request
+import pandas as pd
+from random import choice
 
 
-model = Speech2Text.from_pretrained(
+s2t_model = Speech2Text.from_pretrained(
     "espnet/pengcheng_guo_wenetspeech_asr_train_asr_raw_zh_char"
+)
+
+t2s_model = Text2Speech.from_pretrained(
+    "espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best"
 )
 
 
@@ -118,18 +128,21 @@ def speech2text():
     音频转文字
     """
     speech, rate = soundfile.read(FILEPATH)
-    text, *_ = model(speech)[0]
+    text, *_ = s2t_model(speech)[0]
     return text
+
+
+def text2speech(result_text, firename):
+    """
+    文字转音频，并实时播放
+    """
+    speech = t2s_model(result_text)["wav"]
+    soundfile.write(firename, speech.numpy(), t2s_model.fs, "PCM_16")
+    play(firename)
 
 
 def music(text):
     if text == "播放音乐":
-        from pydub import AudioSegment
-        from pydub.playback import play
-        import urllib.request
-        import pandas as pd
-        from random import choice
-
         music_list = pd.read_csv("./resources/music_list.csv", usecols=["URL"])
         LIST = [i for i in music_list.URL]
         url = choice(LIST)
@@ -138,11 +151,12 @@ def music(text):
         urllib.request.urlretrieve(url, filename)
         birdsound = AudioSegment.from_mp3(filename)
         print("正在播放音乐...")
-        play(birdsound)
+        play_music(birdsound)
         print("音乐播放完毕")
     else:
         result_text = "不好意思，你能再说一遍吗"
-        print(result_text)
+        firename = "./resources/none.wav"
+        text2speech(result_text=result_text, firename=firename)
 
 
 if __name__ == "__main__":
