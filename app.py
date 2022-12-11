@@ -13,27 +13,26 @@ from pydub.playback import play as play_music
 import urllib.request
 import pandas as pd
 from random import choice
+from revChatGPT.revChatGPT import Chatbot
+
+# For the config please go here:
+# https://github.com/acheong08/ChatGPT/wiki/Setup
+config = {"session_token": ""}
 
 
 s2t_model = Speech2Text.from_pretrained(
     "espnet/pengcheng_guo_wenetspeech_asr_train_asr_raw_zh_char"
 )
-
 t2s_model = Text2Speech.from_pretrained(
     "espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best"
 )
-
-
 interrupted = False  # snowboy监听唤醒结束标志
 endSnow = False  # 程序结束标志
-
 framerate = 16000  # 采样率
 num_samples = 2000  # 采样点
 channels = 1  # 声道
 sampwidth = 2  # 采样宽度2bytes
-
 FILEPATH = "./resources/audio.wav"  # 录制完成存放音频路径
-# music_exit = "./resources/dong.wav"  # 唤醒系统退出语音
 music_open = "./resources/ding.wav"  # 唤醒系统打开语音
 os.close(sys.stderr.fileno())  # 去掉错误警告
 
@@ -58,7 +57,6 @@ def detected():
     """
     唤醒成功
     """
-    print("唤醒成功")
     play(music_open)
     global interrupted
     interrupted = True
@@ -114,11 +112,10 @@ def my_record():
     )
     my_buf = []
     t = time.time()
-    print("开始录音...")
+    print("正在录音...\n")
     while time.time() < t + 5:  # 秒
         string_audio_data = stream.read(num_samples)
         my_buf.append(string_audio_data)
-    print("录音结束!")
     save_wave_file(FILEPATH, my_buf)
     stream.close()
 
@@ -137,7 +134,9 @@ def text2speech(result_text, firename):
     文字转音频，并实时播放
     """
     speech = t2s_model(result_text)["wav"]
+    print("正在保存chatgpt的音频...\n")
     soundfile.write(firename, speech.numpy(), t2s_model.fs, "PCM_16")
+    print("正在播放chatgpt的音频...\n")
     play(firename)
 
 
@@ -147,16 +146,23 @@ def music(text):
         LIST = [i for i in music_list.URL]
         url = choice(LIST)
         filename = "./resources/music.mp3"
-        print("正在下载音乐....")
+        print("正在下载音乐....\n")
         urllib.request.urlretrieve(url, filename)
         birdsound = AudioSegment.from_mp3(filename)
-        print("正在播放音乐...")
+        print("正在播放音乐...\n")
         play_music(birdsound)
-        print("音乐播放完毕")
     else:
-        result_text = "不好意思，你能再说一遍吗"
+        result_text = text2text(text)
         firename = "./resources/none.wav"
         text2speech(result_text=result_text, firename=firename)
+
+
+def text2text(text):
+    chatbot = Chatbot(config, conversation_id=None)
+    response = chatbot.get_chat_response(text, output="text")
+    result_text = response["message"]
+    print("chatgpt回复: {}\n".format(result_text))
+    return result_text
 
 
 if __name__ == "__main__":
@@ -166,7 +172,7 @@ if __name__ == "__main__":
         detector = snowboydecoder.HotwordDetector(
             "./resources/xiaozhixiaozhi.pmdl", sensitivity=0.5
         )
-        print("等待唤醒")
+        print("等待唤醒...\n")
         # snowboy监听循环
         detector.start(
             detected_callback=detected,
@@ -175,5 +181,5 @@ if __name__ == "__main__":
         )
         my_record()  # 唤醒成功开始录音
         text = speech2text()
-        print("#### {} #####\n".format(text))
+        print("语音识别结果：{}\n".format(text))
         music(text)
