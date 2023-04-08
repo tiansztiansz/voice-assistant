@@ -37,3 +37,5 @@ python app.py
 [文字转音频模型](https://huggingface.co/espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best)
 
 [chatyuan](https://github.com/clue-ai/ChatYuan)
+
+[killed错误](https://www.cnblogs.com/tiansz/p/17134831.html)
