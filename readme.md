@@ -12,9 +12,6 @@
 <br>
 
 ## 如何启动(Linux)
-将项目克隆到本地后，你需要创建一个python3.7的虚拟环境。然后启动虚拟环境：
-
-
 运行主程序：
 
 ```bash
@@ -39,6 +36,4 @@ python app.py
 
 [文字转音频模型](https://huggingface.co/espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best)
 
-[chatgpt](https://github.com/acheong08/ChatGPT/wiki/Setup)
-
-[chatyuan](https://aistudio.baidu.com/aistudio/projectdetail/5404182?channelType=0&channel=0)
+[chatyuan](https://github.com/clue-ai/ChatYuan)

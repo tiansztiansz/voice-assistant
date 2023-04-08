@@ -13,62 +13,7 @@ from pydub.playback import play as play_music
 import urllib.request
 import pandas as pd
 from random import choice
-import paddle
-from paddlenlp.transformers import T5Tokenizer, T5ForConditionalGeneration
-from paddlenlp.transformers import AutoTokenizer, T5ForConditionalGeneration
-
-
-tokenizer = AutoTokenizer.from_pretrained("ClueAI/ChatYuan-large-v1", from_hf_hub=False)
-model = T5ForConditionalGeneration.from_pretrained(
-    "ClueAI/ChatYuan-large-v1", from_hf_hub=False
-)
-
-
-model.eval()
-
-
-def preprocess(text):
-    text = text.replace("\n", "\\n").replace("\t", "\\t")
-    return text
-
-
-def postprocess(text):
-    return text.replace("\\n", "\n").replace("\\t", "\t")
-
-
-def answer(text, sample=True, top_p=1, temperature=0.7):
-    """sample：是否抽样。生成任务，可以设置为True;
-    top_p：0-1之间，生成的内容越多样"""
-    text = preprocess(text)
-    encoding = tokenizer(
-        text=[text], truncation=True, padding=True, max_length=768, return_tensors="pd"
-    )
-    if not sample:
-        out = model.generate(
-            **encoding,
-            return_dict_in_generate=True,
-            output_scores=False,
-            max_length=512,
-            max_new_tokens=512,
-            num_beams=1,
-            length_penalty=0.4,
-        )
-    else:
-        out = model.generate(
-            **encoding,
-            return_dict_in_generate=True,
-            output_scores=False,
-            max_length=512,
-            max_new_tokens=512,
-            do_sample=True,
-            top_p=top_p,
-            temperature=temperature,
-            no_repeat_ngram_size=3,
-        )
-
-    out_text = tokenizer.batch_decode(out[0], skip_special_tokens=True)
-
-    return postprocess(out_text[0])
+from chatyuan import ChatYuan
 
 
 s2t_model = Speech2Text.from_pretrained(
@@ -164,7 +109,7 @@ def my_record():
     my_buf = []
     t = time.time()
     print("正在录音...\n")
-    while time.time() < t + 5:  # 秒
+    while time.time() < t + 3:  # 秒
         string_audio_data = stream.read(num_samples)
         my_buf.append(string_audio_data)
     save_wave_file(FILEPATH, my_buf)
@@ -203,17 +148,10 @@ def music(text):
         print("正在播放音乐...\n")
         play_music(birdsound)
     else:
-        result_text = text2text(text)
+        result_text = ChatYuan.text2text(text)
         print("机器人回复：{}\n".format(result_text))
         firename = "./resources/none.wav"
         text2speech(result_text=result_text, firename=firename)
-
-
-def text2text(input_text):
-    input_text = "用户：" + input_text + "\n小元："
-    print(f"示例".center(50, "="))
-    output_text = answer(input_text)
-    return output_text
 
 
 if __name__ == "__main__":
