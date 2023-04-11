@@ -33,14 +33,6 @@ music_open = "./resources/ding.wav"  # 唤醒系统打开语音
 os.close(sys.stderr.fileno())  # 去掉错误警告
 
 
-def signal_handler(signal, frame):
-    """
-    监听键盘结束
-    """
-    global interrupted
-    interrupted = True
-
-
 def interrupt_callback():
     """
     监听唤醒
