@@ -1,28 +1,61 @@
+<!-- 标题 -->
+<h1 align="center">智能语音助手</h1>
 
-## 技术构成
-(已完成)语音唤醒：snowboy
 
-(已完成)语音识别：espnet
+<!-- 图标 -->
+<p align="center">
+  <a href="https://github.com/tiansztiansz/voice-assistant/blob/main/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>&nbsp; &nbsp; 
+  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0" target="_blank">
+    <img alt="bilibili图标" src="src/BILIBILI_LOGO.svg" />
+  </a>&nbsp; &nbsp; 
+  <a href="https://www.cnblogs.com/tiansz/" target="_blank">
+    <img alt="博客园" src="src/博客园.jpg" />
+  </a>&nbsp; &nbsp;
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ" target="_blank">
+    <img alt="抖音" src="src/品牌标识_抖音.svg" />
+  </a>
+</p>
 
-(已完成)问答系统: chatyuan
 
-(已完成)语音合成：espnet
-
+<!-- 项目介绍 -->
+> 基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手
 
 <br>
 
-## 如何启动(Linux)
-运行主程序：
 
-```bash
-python app.py
+<!-- 项目使用说明 -->
+## 如何使用
+```
+python3 app.py
 ```
 
-若遇到错误，可查看如下参考资料或向我提问
+<br>
+
+
+<!-- 待办事项 -->
+## 待办事项
+- [ ]  whisper 语音识别模型
+- [ ]  Azure TTS 语音合成模型
 
 
 <br>
 
+<!-- 赞助 -->
+## 赞助
+
+如果这个项目对你有帮助，请给一个⭐️！
+
+或者请小弟喝杯奶茶🧋
+
+<img src="src/wechat.jpg" height="200px">
+<img src="src/alipay.jpg" height="200px">
+
+<br>
+
+
+<!-- 参考资料 -->
 ## 参考资料
 [训练唤醒模型](https://snowboy.hahack.com/)
 

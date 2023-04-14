@@ -26,14 +26,14 @@ def answer(text, sample=True, top_p=0.9, temperature=0.7, context=""):
     text = text.strip()
     text = preprocess(text)
     encoding = tokenizer(
-        text=[text], truncation=True, padding=True, max_length=1024, return_tensors="pt"
+        text=[text], truncation=True, padding=True, max_length=512, return_tensors="pt"
     ).to(device)
     if not sample:
         out = model.generate(
             **encoding,
             return_dict_in_generate=True,
             output_scores=False,
-            max_new_tokens=1024,
+            max_new_tokens=512,
             num_beams=1,
             length_penalty=0.6,
         )
@@ -42,7 +42,7 @@ def answer(text, sample=True, top_p=0.9, temperature=0.7, context=""):
             **encoding,
             return_dict_in_generate=True,
             output_scores=False,
-            max_new_tokens=1024,
+            max_new_tokens=512,
             do_sample=True,
             top_p=top_p,
             temperature=temperature,
@@ -62,5 +62,5 @@ class ChatYuan:
 
 
 if __name__ == "__main__":
-    text2text = ChatYuan.text2text("世界的意义")
+    text2text = ChatYuan.text2text("时间是否存在")
     print(text2text)
