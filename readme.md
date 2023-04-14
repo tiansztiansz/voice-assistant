@@ -20,7 +20,7 @@
 
 
 <!-- 项目介绍 -->
-> 基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手
+<p align="center">基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手</p>
 
 <br>
 
@@ -48,9 +48,10 @@ python3 app.py
 如果这个项目对你有帮助，请给一个⭐️！
 
 或者请小弟喝杯奶茶🧋
-
-<img src="src/wechat.jpg" height="200px">
-<img src="src/alipay.jpg" height="200px">
+<p>
+  <img src="src/wechat.jpg" height="200px">
+  <img src="src/alipay.jpg" height="200px">
+</p>
 
 <br>
 
