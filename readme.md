@@ -4,17 +4,17 @@
 
 <!-- 图标 -->
 <p align="center">
-  <a href="https://github.com/tiansztiansz/voice-assistant/blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <a href="https://github.com/tiansztiansz/voice-assistant/blob/main/LICENSE">
+    <img alt="License" src="src/license.svg" />
   </a>&nbsp; &nbsp; 
-  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0" target="_blank">
+  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
     <img alt="bilibili图标" src="src/BILIBILI_LOGO.svg" />
   </a>&nbsp; &nbsp; 
-  <a href="https://www.cnblogs.com/tiansz/" target="_blank">
+  <a href="https://www.cnblogs.com/tiansz/">
     <img alt="博客园" src="src/博客园.jpg" />
   </a>&nbsp; &nbsp;
-  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ" target="_blank">
-    <img alt="抖音" src="src/品牌标识_抖音.svg" />
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ">
+    <img alt="抖音" src="src/抖音.svg" />
   </a>
 </p>
 
