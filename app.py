@@ -4,9 +4,6 @@ import sys
 import time
 import os
 from pyaudio import PyAudio, paInt16
-from espnet2.bin.asr_inference import Speech2Text
-from espnet2.bin.tts_inference import Text2Speech
-import soundfile
 import time
 from pydub import AudioSegment
 from pydub.playback import play as play_music
@@ -14,21 +11,17 @@ import urllib.request
 import pandas as pd
 from random import choice
 from chatyuan import ChatYuan
+from whisper import ASR
+from tts import TTS
 
 
-s2t_model = Speech2Text.from_pretrained(
-    "espnet/pengcheng_guo_wenetspeech_asr_train_asr_raw_zh_char"
-)
-t2s_model = Text2Speech.from_pretrained(
-    "espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best"
-)
 interrupted = False  # snowboy监听唤醒结束标志
 endSnow = False  # 程序结束标志
 framerate = 16000  # 采样率
 num_samples = 2000  # 采样点
 channels = 1  # 声道
 sampwidth = 2  # 采样宽度2bytes
-FILEPATH = "./resources/audio.wav"  # 录制完成存放音频路径
+FILEPATH = "./resources/sst.wav"  # 录制完成存放音频路径
 music_open = "./resources/ding.wav"  # 唤醒系统打开语音
 os.close(sys.stderr.fileno())  # 去掉错误警告
 
@@ -112,24 +105,24 @@ def speech2text():
     """
     音频转文字
     """
-    speech, rate = soundfile.read(FILEPATH)
-    text, *_ = s2t_model(speech)[0]
+    text = ASR.speech2text(FILEPATH)
+    print("【语音识别结果】  %s\n" % (text))
     return text
 
 
-def text2speech(result_text, firename):
+def text2speech(text):
     """
     文字转音频，并实时播放
     """
-    speech = t2s_model(result_text)["wav"]
+    TTS.text2speech(text)
     print("正在保存音频...\n")
-    soundfile.write(firename, speech.numpy(), t2s_model.fs, "PCM_16")
-    print("正在播放音频...\n")
-    play(firename)
+    birdsound = AudioSegment.from_mp3("resources/tts.mp3")
+    print("正在回答问题...\n")
+    play_music(birdsound)
 
 
 def music(text):
-    if text == "播放音乐":
+    if text == ("播放音乐" or "播放音樂"):
         music_list = pd.read_csv("./resources/music_list.csv", usecols=["URL"])
         LIST = [i for i in music_list.URL]
         url = choice(LIST)
@@ -141,9 +134,8 @@ def music(text):
         play_music(birdsound)
     else:
         result_text = ChatYuan.text2text(text)
-        print("机器人回复：{}\n".format(result_text))
-        firename = "./resources/none.wav"
-        text2speech(result_text=result_text, firename=firename)
+        print("【机器人回复】  {}\n".format(result_text))
+        text2speech(result_text)
 
 
 if __name__ == "__main__":
@@ -162,5 +154,4 @@ if __name__ == "__main__":
         )
         my_record()  # 唤醒成功开始录音
         text = speech2text()
-        print("语音识别结果：{}\n".format(text))
         music(text)

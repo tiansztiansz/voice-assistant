@@ -36,8 +36,7 @@ python3 app.py
 
 <!-- 待办事项 -->
 ## 待办事项
-- [ ]  whisper 语音识别模型
-- [ ]  Azure TTS 语音合成模型
+- [ ]  docker 镜像打包
 
 
 <br>
@@ -47,7 +46,7 @@ python3 app.py
 
 如果这个项目对你有帮助，请给一个⭐️！
 
-或者请小弟喝杯奶茶🧋
+如果资金充裕，能否考虑请小弟喝杯奶茶🧋
 <p>
   <img src="src/wechat.jpg" height="200px">
   <img src="src/alipay.jpg" height="200px">
@@ -73,3 +72,5 @@ python3 app.py
 [chatyuan](https://github.com/clue-ai/ChatYuan)
 
 [killed错误](https://www.cnblogs.com/tiansz/p/17134831.html)
+
+[kaggle-AI](https://github.com/tiansztiansz/kaggle-AI)
