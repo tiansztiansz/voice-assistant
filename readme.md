@@ -4,6 +4,9 @@
 
 <!-- 图标 -->
 <p align="center">
+  <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
+    <img alt="License" src="src/捐赠.svg" />
+  </a>&nbsp; &nbsp; 
   <a href="https://github.com/tiansztiansz/voice-assistant/blob/main/LICENSE">
     <img alt="License" src="src/license.svg" />
   </a>&nbsp; &nbsp; 
@@ -25,9 +28,10 @@
 <br>
 
 <!-- 演示视频 -->
-<video  controls>
-    <source src="src/语音助手显示视频.mp4" type="video/mp4">
-</video>
+<p align="center">
+  <img src="src/语音助手显示视频.gif">
+</p>
+
 
 
 <br>
@@ -45,19 +49,6 @@ python3 app.py
 ## 待办事项
 - [ ]  docker 镜像打包
 
-
-<br>
-
-<!-- 赞助 -->
-## 赞助
-
-如果这个项目对你有帮助，请给一个⭐️！
-
-如果资金充裕，能否考虑请小弟喝杯奶茶🧋
-<p>
-  <img src="src/wechat.jpg" height="200px">
-  <img src="src/alipay.jpg" height="200px">
-</p>
 
 <br>
 
@@ -81,3 +72,14 @@ python3 app.py
 [killed错误](https://www.cnblogs.com/tiansz/p/17134831.html)
 
 [kaggle-AI](https://github.com/tiansztiansz/kaggle-AI)
+
+<br>
+
+<!-- 赞助 -->
+## 赞助
+
+如果这个项目对你有帮助，请给一个⭐️！
+
+如果资金充裕，能否考虑请小弟喝杯[奶茶🧋](https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png)
+
+
