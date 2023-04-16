@@ -1,9 +1,3 @@
-<!-- 演示视频 -->
-<video  controls>
-    <source src="src/语音助手显示视频.mp4" type="video/mp4">
-</video>
-
-
 <!-- 标题 -->
 <h1 align="center">智能语音助手</h1>
 
@@ -30,6 +24,13 @@
 
 <br>
 
+<!-- 演示视频 -->
+<video  controls>
+    <source src="src/语音助手显示视频.mp4" type="video/mp4">
+</video>
+
+
+<br>
 
 <!-- 项目使用说明 -->
 ## 如何使用
