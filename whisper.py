@@ -1,6 +1,8 @@
 from faster_whisper import WhisperModel
 
 model_size = "medium"
+
+# 如果你的显卡显存大于 2g，可以设置 device="cuda"
 model = WhisperModel(model_size, device="cpu", compute_type="int8")
 
 

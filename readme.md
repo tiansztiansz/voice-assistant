@@ -41,16 +41,62 @@
 
 <!-- 项目使用说明 -->
 ## 如何使用
+首先确保系统环境为 Unbuntu 20.04 及以上，并安装依赖包如下：
+```bash
+pip install -r requirements.txt
 ```
+接着运行主程序：
+```bash
 python3 app.py
 ```
 
 <br>
 
+## 目录结构
+
+```
+.
+├── LICENSE              # 协议
+├── _snowboydetect.so    # 依赖文件
+├── app.py               # 主程序
+├── chatyuan.py          # 聊天模块
+├── readme.md            # 自述文件
+├── requirements.txt     # 依赖包
+├── resources           
+│   ├── common.res       # 依赖文件
+│   ├── ding.wav         # 唤醒时的启动音频
+│   ├── music.mp3        # 音乐文件
+│   ├── music_list.csv   # 音乐下载链接
+│   ├── sst.wav          # 语音转文本的音频
+│   ├── tts.mp3          # 文本转语音的音频
+│   └── xiaozhixiaozhi.pmdl  # 唤醒模型
+├── snowboy-detect-swig.cc   # 依赖文件
+├── snowboy-detect-swig.i    # 依赖文件
+├── snowboy-detect-swig.o    # 依赖文件
+├── snowboydecoder.py        # 唤醒模块
+├── snowboydetect.py         # 唤醒模块
+├── src                      # 其他文件夹
+│   ├── BILIBILI_LOGO.svg
+│   ├── kaggle.svg
+│   ├── license.svg
+│   ├── 博客园.jpg
+│   ├── 抖音.svg
+│   ├── 捐赠.svg
+│   └── 语音助手显示视频.gif
+├── tts.py        # 文字转语音模块
+└── whisper.py    # 语音转文本模块
+```
+
+
+<br>
 
 <!-- 待办事项 -->
 ## 待办事项
 - [ ]  docker 镜像打包
+- [ ]  修改唤醒时的语音
+- [ ]  语音转文字的提示
+- [ ]  文字转文字的提示
+- [ ]  文字转语音的提示
 
 
 <br>
@@ -66,9 +112,6 @@ python3 app.py
 
 [音乐如何下载](https://link.hhtjim.com/)
 
-[语音识别模型](https://huggingface.co/espnet/pengcheng_guo_wenetspeech_asr_train_asr_raw_zh_char)
-
-[文字转音频模型](https://huggingface.co/espnet/kan-bayashi_csmsc_tts_train_tacotron2_raw_phn_pypinyin_g2p_phone_train.loss.best)
 
 [chatyuan](https://github.com/clue-ai/ChatYuan)
 
