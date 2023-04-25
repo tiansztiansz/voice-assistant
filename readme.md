@@ -32,7 +32,7 @@
 
 <!-- 演示视频 -->
 <p align="center">
-  <img src="src/语音助手显示视频.gif">
+  <img src="src/语音助手显示视频.gif" width='100%'>
 </p>
 
 
