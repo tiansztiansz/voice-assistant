@@ -41,7 +41,17 @@
 
 <!-- 项目使用说明 -->
 ## 如何使用
-首先确保系统环境为 Ubuntu 20.04 及以上，并安装依赖包如下：
+首先确保系统环境为 Ubuntu 20.04 及以上！
+
+打开终端并克隆本仓库：
+```bash
+git clone https://github.com/tiansztiansz/voice-assistant.git
+```
+进入项目目录：
+```bash
+cd voice-assistant
+```
+然后安装依赖包：
 ```bash
 pip install -r requirements.txt
 ```
