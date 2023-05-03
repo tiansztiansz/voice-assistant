@@ -32,7 +32,7 @@
 
 <!-- 演示视频 -->
 <p align="center">
-  <img src="src/语音助手显示视频.gif" width='100%'>
+  <img src="src/问答系统.png" width='100%'>
 </p>
 
 
@@ -59,6 +59,12 @@ pip install -r requirements.txt
 ```bash
 python3 app.py
 ```
+
+当你看到程序显示“等待唤醒”字样时，则表明你已成功运行了程序！
+
+接着尝试唤醒它吧，请说“小智小智”。当听到 ding 的语音提示时，请尝试说“广州在哪里”来向它提问。
+
+或者当你想听歌的时候，请尝试说“播放音乐”
 
 <br>
 
@@ -102,7 +108,9 @@ python3 app.py
 
 ## 智能音箱实现
 可在淘宝购买【带麦克风】的蓝牙音箱，连接电脑后即可实现智能音箱的效果。
-![智能语音音箱](src/蓝牙音箱硬件图.jpg)
+<p align="center">
+  <img src="src/蓝牙音箱硬件图.jpg" width='50%'>
+</p>
 
 
 <br>
