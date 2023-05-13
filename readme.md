@@ -1,6 +1,10 @@
-<!-- 标题 -->
-<h1 align="center">智能语音助手</h1>
 
+
+<!-- 标题 -->
+<!-- <p align="center">智能语音助手</p> -->
+<p align="center">
+  <img src="src/logo-no-background.svg" width='100%'>
+</p>
 
 <!-- 图标 -->
 <p align="center">
