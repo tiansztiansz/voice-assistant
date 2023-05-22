@@ -30,7 +30,7 @@
 
 
 <!-- 项目介绍 -->
-<p align="center">基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手</p>
+<p align="center">Smart voice assistant based on Snowboy, Whisper, ChatYuan and Azure TTS</p>
 
 <br>
 
@@ -44,58 +44,58 @@
 <br>
 
 <!-- 项目使用说明 -->
-## 如何使用
-首先确保系统环境为 Ubuntu 20.04 及以上！
+## how to use
+First make sure that the system environment is Ubuntu 20.04 and above!
 
-打开终端并克隆本仓库：
+Open a terminal and clone this repository:
 ```bash
 git clone https://github.com/tiansztiansz/voice-assistant.git
 ```
-进入项目目录：
+Enter the project directory:
 ```bash
 cd voice-assistant
 ```
-然后安装依赖包：
+Then install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-接着运行主程序：
+Then run the main program:
 ```bash
 python3 app.py
 ```
 
-当你看到程序显示“等待唤醒”字样时，则表明你已成功运行了程序！
+When you see the program display "waiting to wake up" words, it means you have successfully run the program!
 
-接着尝试唤醒它吧，请说“小智小智”。当听到 ding 的语音提示时，请尝试说“广州在哪里”来向它提问。
+Then try to wake it up, please say "Xiaozhi Xiaozhi". When you hear ding's voice prompt, try saying "where is Guangzhou" to ask it a question.
 
-或者当你想听歌的时候，请尝试说“播放音乐”
+Or try saying "播放音乐" when you want to hear a song
 
 <br>
 
-## 目录结构
+## Directory Structure
 
 ```
 .
-├── LICENSE              # 协议
-├── _snowboydetect.so    # 依赖文件
-├── app.py               # 主程序
-├── chatyuan.py          # 聊天模块
-├── readme.md            # 自述文件
-├── requirements.txt     # 依赖包
+├── LICENSE              
+├── _snowboydetect.so    # dependent file
+├── app.py               # main program
+├── chatyuan.py          # chat module
+├── readme.md            # readme file
+├── requirements.txt     # dependent package
 ├── resources           
-│   ├── common.res       # 依赖文件
-│   ├── ding.wav         # 唤醒时的启动音频
-│   ├── music.mp3        # 音乐文件
-│   ├── music_list.csv   # 音乐下载链接
-│   ├── sst.wav          # 语音转文本的音频
-│   ├── tts.mp3          # 文本转语音的音频
-│   └── xiaozhixiaozhi.pmdl  # 唤醒模型
-├── snowboy-detect-swig.cc   # 依赖文件
-├── snowboy-detect-swig.i    # 依赖文件
-├── snowboy-detect-swig.o    # 依赖文件
-├── snowboydecoder.py        # 唤醒模块
-├── snowboydetect.py         # 唤醒模块
-├── src                      # 其他文件夹
+│   ├── common.res       # dependent file
+│   ├── ding.wav         # Startup audio on wake
+│   ├── music.mp3        # music file
+│   ├── music_list.csv   # music download link
+│   ├── sst.wav          # Speech-to-text audio
+│   ├── tts.mp3          # Text-to-Speech Audio
+│   └── xiaozhixiaozhi.pmdl  # wake up model
+├── snowboy-detect-swig.cc   # dependent file
+├── snowboy-detect-swig.i    # dependent file
+├── snowboy-detect-swig.o    # dependent file
+├── snowboydecoder.py        # wake up module
+├── snowboydetect.py         # wake up module
+├── src                      # other folders
 │   ├── BILIBILI_LOGO.svg
 │   ├── kaggle.svg
 │   ├── license.svg
@@ -103,15 +103,15 @@ python3 app.py
 │   ├── 抖音.svg
 │   ├── 捐赠.svg
 │   └── 语音助手显示视频.gif
-├── tts.py        # 文字转语音模块
-└── whisper.py    # 语音转文本模块
+├── tts.py        # Text-to-speech module
+└── whisper.py    # Speech-to-text module
 ```
 
 
 <br>
 
-## 智能音箱实现
-可在淘宝购买【带麦克风】的蓝牙音箱，连接电脑后即可实现智能音箱的效果。
+## Realization of smart speakers
+You can buy a bluetooth speaker with a microphone on Taobao, and you can realize the effect of a smart speaker after connecting it to a computer.
 <p align="center">
   <img src="src/蓝牙音箱硬件图.jpg" width='50%'>
 </p>
@@ -120,40 +120,41 @@ python3 app.py
 <br>
 
 <!-- 待办事项 -->
-## 待办事项
-- [ ]  修改唤醒时的语音
-- [ ]  语音转文字的提示
-- [ ]  文字转文字的提示
-- [ ]  文字转语音的提示
+## to do list
+- [ ]  Modify the voice on wake up
+- [ ]  Speech-to-text tips
+- [ ]  Tips for converting text to text
+- [ ]  Tips for text-to-speech
+- [ ]  Convert Traditional Chinese to Simplified Chinese after Speech Recognition
 
 
 <br>
 
 
 <!-- 参考资料 -->
-## 参考资料
-[训练唤醒模型](https://snowboy.hahack.com/)
+## references
+[train the wake-up model](https://snowboy.hahack.com/)
 
-[唤醒后录制音频](https://www.passerma.com/article/54/#2.%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BD%95%E5%88%B6%E5%A3%B0%E9%9F%B3%E4%B8%8A%E4%BC%A0%E7%99%BE%E5%BA%A6)
+[Record audio after waking up](https://www.passerma.com/article/54/#2.%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BD%95%E5%88%B6%E5%A3%B0%E9%9F%B3%E4%B8%8A%E4%BC%A0%E7%99%BE%E5%BA%A6)
 
-[如何使用snowboy](https://www.bilibili.com/video/BV1pr4y1U7cE/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=06eafedcfca50f6eabb7b3d6b61ecfe3)
+[how to use snowboy](https://www.bilibili.com/video/BV1pr4y1U7cE/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&vd_source=06eafedcfca50f6eabb7b3d6b61ecfe3)
 
-[音乐如何下载](https://link.hhtjim.com/)
+[how to download music](https://link.hhtjim.com/)
 
 
 [chatyuan](https://github.com/clue-ai/ChatYuan)
 
-[killed错误](https://www.cnblogs.com/tiansz/p/17134831.html)
+[killed](https://www.cnblogs.com/tiansz/p/17134831.html)
 
 [kaggle-AI](https://github.com/tiansztiansz/kaggle-AI)
 
 <br>
 
 <!-- 赞助 -->
-## 赞助
+## sponsor
 
-如果这个项目对你有帮助，请给一个⭐️！
+If this project helped you, please give a ⭐️！
 
-如果资金充裕，能否考虑请小弟喝杯[奶茶🧋](https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png)
+If you have sufficient funds, can you consider treating me to a drink?[milk tea🧋](https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png)
 
 
