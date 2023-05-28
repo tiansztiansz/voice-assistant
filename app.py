@@ -8,6 +8,7 @@ import time
 from pydub import AudioSegment
 from pydub.playback import play as play_music
 import urllib.request
+# import wget
 import pandas as pd
 from random import choice
 from chatyuan import ChatYuan
@@ -122,13 +123,14 @@ def text2speech(text):
 
 
 def music(text):
-    if text == ("播放音乐" or "播放音樂"):
+    if text == "播放音乐" or text == "播放音樂":
         music_list = pd.read_csv("./resources/music_list.csv", usecols=["URL"])
         LIST = [i for i in music_list.URL]
         url = choice(LIST)
         filename = "./resources/music.mp3"
         print("正在下载音乐....\n")
         urllib.request.urlretrieve(url, filename)
+        # wget.download(url, filename)
         birdsound = AudioSegment.from_mp3(filename)
         print("正在播放音乐...\n")
         play_music(birdsound)

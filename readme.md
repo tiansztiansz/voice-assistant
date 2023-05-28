@@ -3,16 +3,13 @@
 <!-- 标题 -->
 <!-- <p align="center">智能语音助手</p> -->
 <p align="center">
-  <img src="src/logo-no-background.svg" width='100%'>
+  <img src="src/logo-no-background.svg" width='60%'>
 </p>
 
 <!-- 图标 -->
 <p align="center">
   <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
     <img alt="License" src="src/捐赠.svg" />
-  </a>&nbsp; &nbsp; 
-  <a href="https://github.com/tiansztiansz/voice-assistant/blob/main/LICENSE">
-    <img alt="License" src="src/license.svg" />
   </a>&nbsp; &nbsp; 
   <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
     <img alt="bilibili图标" src="src/BILIBILI_LOGO.svg" />
