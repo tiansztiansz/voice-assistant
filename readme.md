@@ -1,9 +1,6 @@
 <!-- 标题 -->
 <h1 align="center">智能语音助手</h1>
 
-<!-- 项目介绍 -->
-<p align="center">基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手</p>
-
 <!-- 图标 -->
 <p align="center">
   <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
@@ -22,6 +19,11 @@
     kaggle
   </a>
 </p>
+
+<!-- 项目介绍 -->
+<p align="center">基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手</p>
+
+
 
 <br>
 
