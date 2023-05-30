@@ -1,45 +1,29 @@
 <!-- 标题 -->
-<!-- <p align="center">智能语音助手</p> -->
-<p align="center">
-  <img src="src/logo-no-background.svg" width='60%'>
-</p>
-
-<!-- 图标 -->
-<p align="center">
-  <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
-    <img alt="License" src="src/捐赠.svg" />
-  </a>&nbsp; &nbsp; 
-  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
-    <img alt="bilibili图标" src="src/BILIBILI_LOGO.svg" />
-  </a>&nbsp; &nbsp; 
-  <a href="https://www.cnblogs.com/tiansz/">
-    <img alt="博客园" src="src/博客园.jpg" />
-  </a>&nbsp; &nbsp;
-  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ">
-    <img alt="抖音" src="src/抖音.svg" />
-  </a>&nbsp; &nbsp;
-  <a href="https://www.kaggle.com/tiansztianszs">
-    <img alt="kaggle" src="src/kaggle.svg" />
-  </a>
-</p>
-
+<h1 align="center">智能语音助手</h1>
 
 <!-- 项目介绍 -->
 <p align="center">基于 Snowboy、Whisper、ChatYuan 和 Azure TTS 的智能语音助手</p>
 
-<br>
-
-
-
-<!-- 演示视频 -->
+<!-- 图标 -->
 <p align="center">
-  <img src="src/问答系统.png" width='100%'>
+  <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
+    捐赠
+  </a>&nbsp; &nbsp; 
+  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
+    bilibili
+  </a>&nbsp; &nbsp; 
+  <a href="https://www.cnblogs.com/tiansz/">
+    博客园
+  </a>&nbsp; &nbsp;
+  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ">
+    抖音
+  </a>&nbsp; &nbsp;
+  <a href="https://www.kaggle.com/tiansztianszs">
+    kaggle
+  </a>
 </p>
 
-
-
 <br>
-
 
 <!-- 项目使用说明 -->
 ## 如何使用
@@ -110,9 +94,7 @@ python3 app.py
 
 ## 智能音箱实现
 可在淘宝购买【带麦克风】的蓝牙音箱，连接电脑后即可实现智能音箱的效果。
-<p align="center">
-  <img src="src/蓝牙音箱硬件图.jpg" width='50%'>
-</p>
+
 
 
 <br>
