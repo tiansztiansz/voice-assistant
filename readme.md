@@ -3,7 +3,7 @@
 
 <!-- 图标 -->
 <p align="center">
-  <a href="https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png">
+  <a href="https://www.cnblogs.com/tiansz/p/17318568.html">
     捐赠
   </a>&nbsp; &nbsp; 
   <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
@@ -17,6 +17,9 @@
   </a>&nbsp; &nbsp;
   <a href="https://www.kaggle.com/tiansztianszs">
     kaggle
+  </a>&nbsp; &nbsp;
+  <a href="https://huggingface.co/tiansz">
+    huggingface
   </a>
 </p>
 
@@ -45,7 +48,7 @@ pip install -r requirements.txt
 ```
 接着运行主程序：
 ```bash
-python3 app.py
+python3 src/app.py
 ```
 
 当你看到程序显示“等待唤醒”字样时，则表明你已成功运行了程序！
@@ -56,43 +59,6 @@ python3 app.py
 
 <br>
 
-## 目录结构
-
-```
-.
-├── LICENSE              # 协议
-├── _snowboydetect.so    # 依赖文件
-├── app.py               # 主程序
-├── chatyuan.py          # 聊天模块
-├── readme.md            # 自述文件
-├── requirements.txt     # 依赖包
-├── resources           
-│   ├── common.res       # 依赖文件
-│   ├── ding.wav         # 唤醒时的启动音频
-│   ├── music.mp3        # 音乐文件
-│   ├── music_list.csv   # 音乐下载链接
-│   ├── sst.wav          # 语音转文本的音频
-│   ├── tts.mp3          # 文本转语音的音频
-│   └── xiaozhixiaozhi.pmdl  # 唤醒模型
-├── snowboy-detect-swig.cc   # 依赖文件
-├── snowboy-detect-swig.i    # 依赖文件
-├── snowboy-detect-swig.o    # 依赖文件
-├── snowboydecoder.py        # 唤醒模块
-├── snowboydetect.py         # 唤醒模块
-├── src                      # 其他文件夹
-│   ├── BILIBILI_LOGO.svg
-│   ├── kaggle.svg
-│   ├── license.svg
-│   ├── 博客园.jpg
-│   ├── 抖音.svg
-│   ├── 捐赠.svg
-│   └── 语音助手显示视频.gif
-├── tts.py        # 文字转语音模块
-└── whisper.py    # 语音转文本模块
-```
-
-
-<br>
 
 ## 智能音箱实现
 可在淘宝购买【带麦克风】的蓝牙音箱，连接电脑后即可实现智能音箱的效果。
@@ -136,6 +102,6 @@ python3 app.py
 
 如果这个项目对你有帮助，请给一个⭐️！
 
-如果资金充裕，能否考虑请小弟喝杯[奶茶🧋](https://github.com/tiansztiansz/tiansztiansz/blob/main/wechat_alipay.png)
+如果资金充裕，能否考虑请小弟喝杯[奶茶](https://www.cnblogs.com/tiansz/p/17318568.html)🧋
 
 
