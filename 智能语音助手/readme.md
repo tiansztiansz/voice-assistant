@@ -40,7 +40,7 @@ git clone https://github.com/tiansztiansz/voice-assistant.git
 ```
 进入项目目录：
 ```bash
-cd voice-assistant
+cd voice-assistant/智能语音助手
 ```
 然后安装依赖包：
 ```bash
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ```
 接着运行主程序：
 ```bash
-python3 src/app.py
+python3 app.py
 ```
 
 当你看到程序显示“等待唤醒”字样时，则表明你已成功运行了程序！
