@@ -3,20 +3,11 @@
 
 <!-- 图标 -->
 <p align="center">
-  <a href="https://www.cnblogs.com/tiansz/p/17318568.html">
-    捐赠
-  </a>&nbsp; &nbsp; 
-  <a href="https://space.bilibili.com/28606893?spm_id_from=333.1007.0.0">
+  <a href="https://space.bilibili.com/28606893">
     bilibili
   </a>&nbsp; &nbsp; 
-  <a href="https://www.cnblogs.com/tiansz/">
-    博客园
-  </a>&nbsp; &nbsp;
-  <a href="https://www.douyin.com/user/MS4wLjABAAAAqkpp6UyrANDXFStAMWuRPp7FU4zHfyq0_OYPoC75_qQ">
-    抖音
-  </a>&nbsp; &nbsp;
-  <a href="https://www.kaggle.com/tiansztianszs">
-    kaggle
+  <a href="https://github.com/tiansztiansz">
+    github
   </a>&nbsp; &nbsp;
   <a href="https://huggingface.co/tiansz">
     huggingface
@@ -38,11 +29,7 @@
 ```bash
 git clone https://github.com/tiansztiansz/voice-assistant.git
 ```
-进入项目目录：
-```bash
-cd voice-assistant/智能语音助手
-```
-然后安装依赖包：
+进入当前项目目录，然后安装依赖包：
 ```bash
 pip install -r requirements.txt
 ```
@@ -94,14 +81,5 @@ python3 app.py
 [killed错误](https://www.cnblogs.com/tiansz/p/17134831.html)
 
 [kaggle-AI](https://github.com/tiansztiansz/kaggle-AI)
-
-<br>
-
-<!-- 赞助 -->
-## 赞助
-
-如果这个项目对你有帮助，请给一个⭐️！
-
-如果资金充裕，能否考虑请小弟喝杯[奶茶](https://www.cnblogs.com/tiansz/p/17318568.html)🧋
 
 
